@@ -93,7 +93,7 @@ var map = new ol.Map({
   target: 'map',
   layers: [layer, vectorMap],
   view: new ol.View({
-    maxZoom: 13,
+    maxZoom: 12,
     center: ol.proj.transform(
       [174.7787, -41.2924],
       "EPSG:4326",
