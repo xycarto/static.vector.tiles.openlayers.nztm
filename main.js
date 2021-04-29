@@ -134,7 +134,7 @@ function showInfo(evt) {
   var title = features[0].getProperties().name_ascii;
   var desc = features[0].getProperties().desc_code;
   popTitle.innerHTML = title + '<hr>';
-  popStory.innerHTML = title + ' is considered a ' + desc + ' by the LINZ geographic names layer. This pop up window is here to demonstrate how we can collect data from the attibutes of a vector tile and display those results in a window.  The ' + desc + ' is taken directly from attibutes of the vector tile; as well as the ' + title + ' name.';
+  popStory.innerHTML = title + ' is considered a ' + desc + ' by the LINZ geographic names layer. This pop up window demonstrates how we can collect data from the attibutes of a vector tile and display those results in a window.  The ' + desc + ' is taken directly from attibutes of the vector tile; as well as the ' + title + ' name.';
 
   overlay.setPosition(coordinate);
 };
