@@ -31,7 +31,7 @@ desc_code = BAY, METR, LOC, POP, TOWN, SBRB
 
 ## Upload to PostgreSQL
 
-shp2pgsql -s 2193 /data/wellyRegion_townBay.shp public.wellyRegion_townBay_nztm | psql -h localhost -d <yourDatabaseHere> -U <youUserNameHere>
+```shp2pgsql -s 2193 /data/wellyRegion_townBay.shp public.wellyRegion_townBay_nztm | psql -h localhost -d <yourDatabaseHere> -U <youUserNameHere>```
 
 ## TRex Tiling
 
