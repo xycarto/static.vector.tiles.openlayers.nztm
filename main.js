@@ -70,7 +70,7 @@ var placeSource = new ol.source.VectorTile({
   tilePixelRatio: 2, // oversampling when > 1
   tileGrid: new ol.tilegrid.TileGrid({ 
     origin: [-1000000, 10000000],
-    maxZoom: 16,
+    maxZoom: 14,
     tileSize: 4096,
     extent: [827933.23, 3729820.29, 3195373.59, 7039943.58],
     resolutions: resolutions,
@@ -93,6 +93,7 @@ var map = new ol.Map({
   target: 'map',
   layers: [layer, vectorMap],
   view: new ol.View({
+    minZoom: 6,
     maxZoom: 12,
     center: ol.proj.transform(
       [174.7787, -41.2924],
