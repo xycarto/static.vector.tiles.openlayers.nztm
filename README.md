@@ -41,7 +41,9 @@ The command used to run TREX:
 t_rex generate --progress true --maxzoom=14 --minzoom=0 --extent=174.627603,-41.613839,176.259896,-40.737190  --config /configpsql_points.toml
 ```
 
+
 TRex will generate `gzip` pfb's.  If you prefer to unzip them:
+
 
 ```find . -type f | xargs -n1 -P 1 -t -I % gzip -d -r -S .pbf %```
 
@@ -56,6 +58,7 @@ The Openlayers for this is version 6.  `<script>` tags needed are:
 <script src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
 <script src="https://unpkg.com/ol-mapbox-style@6.3.2/dist/olms.js" type="text/javascript"></script>
 ```
+
 
 Some of the imporant bits for the JS. 
 
@@ -92,9 +95,30 @@ var matrixIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 Another great tutorial from [LINZ](https://www.linz.govt.nz/data/linz-data-service/guides-and-documentation/using-lds-xyz-services-in-openlayers) regarding the set up of an XYZ for raster tiles. 
 
+```
+// Tile Services Map
+var urlTemplate =
+  "https://tiles.maps.linz.io/nz_colour_basemap/NZTM/{z}/{x}/{y}.png";
+
+// Set raster layer
+var layer = new ol.layer.Tile({
+  source: new ol.source.XYZ({
+    url: urlTemplate,
+    projection: proj2193,
+    tileGrid: new ol.tilegrid.TileGrid({
+      origin: origin,
+      resolutions: resolutions,
+      matrixIds: matrixIds,
+      extent: [827933.23, 3729820.29, 3195373.59, 7039943.58]
+    })
+  })
+});
+```
+
 #### Vector Tiles
 
 Set up the vector layer: 
+
 
 ```
 // Set vector layer
@@ -123,6 +147,7 @@ var vectorMap = new ol.layer.VectorTile({
   })
 ```
 
+
 ### Styling
 
 For the style file example see here: https://github.com/xycarto/static.vector.tiles.openlayers.nztm/blob/main/styleText.json
@@ -136,6 +161,8 @@ fetch('./styleText.json').then(function(response) {
   });
 });
 ```
+
+
 2. The above uses `olms.applyStyle`. To access this function you will need to add the scipt tag to your HTML:
 
 ```<script src="https://unpkg.com/ol-mapbox-style@6.3.2/dist/olms.js" type="text/javascript"></script>```
