@@ -1,0 +1,44 @@
+[service.mvt]
+viewer = true
+
+[[datasource]]
+dbconn = "postgresql://postgres:postgres@localhost/nz_data"
+name = "dbconn"
+default = true
+
+[grid.user]
+width = 4096
+height = 4096
+extent = { minx = -1000000, miny = 3087000, maxx = 3327000, maxy = 10000000 }
+srid = 2193
+units = "m"
+resolutions = [8960.0,4480.0,2240.0,1120.0,560.0,280.0,140.0,70.0,28.0,14.0,7.0,2.8,1.4,0.7,0.28,0.14,0.07]
+origin = "TopLeft"
+
+[[tileset]]
+name = "wellyRegion_townBay_nztm"
+extent = [174.627603, -41.613839, 176.259896, -40.737190]
+[[tileset.layer]]
+name = "wellyRegion_townBay_nztm"
+table_name = "wellyRegion_townBay_nztm"
+geometry_field = "geom"
+geometry_type = "POINT"
+srid = 2193
+buffer_size = 0
+#make_valid = true
+#simplify = true
+#query_limit = 1000
+
+[[tileset.layer.query]]
+sql = """SELECT * FROM wellyRegion_townBay_nztm WHERE geom && !bbox!"""
+
+#resolutions = [8960.0,4480.0,2240.0,1120.0,560.0,280.0,140.0,70.0,28.0,14.0,7.0,2.8,1.4,0.7,0.28,0.14,0.07]
+
+[cache.file]
+base = "/home/ireese/vectortile-test-playg_nztm/tiles"
+
+[webserver]
+bind = "0.0.0.0"
+port = 8080
+
+

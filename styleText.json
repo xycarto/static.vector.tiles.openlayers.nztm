@@ -1,0 +1,63 @@
+{
+  "version": 8,
+  "name": "wellyRegion_townBay_nztm",
+  "center": [174.803467, -41.302571],
+  "zoom": 8,
+  "metadata": {
+    "mapbox:autocomposite": true
+  },
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "sources": {
+    "wellyRegion_townBay_nztm": {
+      "type": "vector",
+      "tiles": ["https://xycarto.github.io/static.vector.tiles.openlayers.nztm/tiles/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 14
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(0,0,0,0)"
+      }
+    },
+    {
+        "id": "water",
+        "type": "symbol",
+        "source": "wellyRegion_townBay_nztm",
+        "source-layer": "wellyRegion_townBay_nztm",
+        "filter": ["==", "desc_code", "BAY"],
+        "maxzoom": 14,
+        "layout": {
+          "text-field": ["get", "name"],
+          "text-size": ["*", ["get", "size"], 2],
+          "text-font": ["Arial Normal", "sans-serif Italic"]
+        },
+        "paint": {
+          "text-color": "#55717d",
+          "text-halo-width": 2,
+          "text-halo-color": "#dceaf0"
+        }
+      },
+    {
+      "id": "town",
+      "type": "symbol",
+      "source": "wellyRegion_townBay_nztm",
+      "source-layer": "wellyRegion_townBay_nztm",
+      "filter": ["!=", "desc_code", "BAY"],
+      "maxzoom": 14,
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-size": ["*", ["get", "size"], 2],
+        "text-font": ["Arial Normal", "sans-serif Normal"]
+      },
+      "paint": {
+        "text-color": "#f4f2e5",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(50,65,50,0.85)"
+      }
+    }
+  ]
+}
