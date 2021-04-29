@@ -1,0 +1,1 @@
+# static.vector.tiles.openlayers.nztm
