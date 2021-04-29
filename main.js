@@ -96,7 +96,7 @@ var placesource = new ol.source.VectorTile({
   extent: [827933.23, 3729820.29, 3195373.59, 7039943.58],
   format: new ol.format.MVT(),
   projection: ol.proj.get('EPSG:2193'),
-  url: 'https://xycarto.github.io/static.vector.tiles.openlayers.nztm/tiles/{z}/{x}/{y}.pbf'
+  url: 'https://xycarto.github.io/static.vector.tiles.openlayers.nztm/tiles/wellyRegion_townBay_nztm/{z}/{x}/{y}.pbf'
 
 });
 

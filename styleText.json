@@ -10,7 +10,7 @@
   "sources": {
     "wellyRegion_townBay_nztm": {
       "type": "vector",
-      "tiles": ["https://xycarto.github.io/static.vector.tiles.openlayers.nztm/tiles/{z}/{x}/{y}.pbf"],
+      "tiles": ["https://xycarto.github.io/static.vector.tiles.openlayers.nztm/tiles/wellyRegion_townBay_nztm/{z}/{x}/{y}.pbf"],
       "minzoom": 0,
       "maxzoom": 14
     }
