@@ -39,28 +39,9 @@ var proj2193 = new ol.proj.Projection({
 	extent: [827933.23, 3729820.29, 3195373.59, 7039943.58]
 });
 
-// NZTM tile matrix origin, resolution and matrixId definitions. See the LDS tile set definition document for more information
+// NZTM tile matrix origin, resolution and matrixId definitions.
 var origin = [-1000000, 10000000];
-var resolutions = [
-    8960,
-    4480,
-    2240,
-    1120,
-    560,
-    280,
-    140,
-    70,
-    28,
-    14,
-    7,
-    2.8,
-    1.4,
-    0.7,
-    0.28,
-    0.14,
-    0.07
-  ];
-
+var resolutions = [ 8960, 4480, 2240, 1120, 560, 280, 140, 70, 28, 14, 7, 2.8, 1.4, 0.7, 0.28, 0.14, 0.07 ];
 var matrixIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 
@@ -82,7 +63,8 @@ var layer = new ol.layer.Tile({
   })
 });
 
-var placesource = new ol.source.VectorTile({
+// Set vector layer
+var placeSource = new ol.source.VectorTile({
   cacheSize: 0,
   overlaps: true,
   tilePixelRatio: 1, // oversampling when > 1
@@ -97,16 +79,14 @@ var placesource = new ol.source.VectorTile({
   format: new ol.format.MVT(),
   projection: ol.proj.get('EPSG:2193'),
   url: 'https://xycarto.github.io/static.vector.tiles.openlayers.nztm/tiles/wellyRegion_townBay_nztm/{z}/{x}/{y}.pbf'
-
 });
 
 var vectorMap = new ol.layer.VectorTile({
   declutter: true,
-  source: placesource,
+  source: placeSource,
   renderMode: 'vector',
   zIndex: 10
-  
-})
+  })
 
 // Add base map to HTML map container
 var map = new ol.Map({
@@ -153,9 +133,9 @@ function showInfo(evt) {
 
   console.log(features[0].getProperties().name_ascii);
   var title = features[0].getProperties().name_ascii;
-  var story = features[0].getProperties().desc_code;
+  var desc = features[0].getProperties().desc_code;
   popTitle.innerHTML = title + '<hr>';
-  popStory.innerHTML = title + ' is considered a ' + story + ' by the LINZ geographic placenames layer. This pop up window is here to demonstrate how we can collect data from the attibutes of a vector tile, derived from a shapefile, and display those results in a window.  The ' + story + ' is taken directly from attibutes of the vector tile; as well as the ' + title + ' name.';
+  popStory.innerHTML = title + ' is considered a ' + desc + ' by the LINZ geographic names layer. This pop up window is here to demonstrate how we can collect data from the attibutes of a vector tile and display those results in a window.  The ' + desc + ' is taken directly from attibutes of the vector tile; as well as the ' + title + ' name.';
 
   overlay.setPosition(coordinate);
 };
