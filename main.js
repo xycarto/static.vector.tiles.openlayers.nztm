@@ -67,7 +67,7 @@ var layer = new ol.layer.Tile({
 var placeSource = new ol.source.VectorTile({
   cacheSize: 0,
   overlaps: true,
-  tilePixelRatio: 2, // oversampling when > 1
+  tilePixelRatio: 1, // oversampling when > 1
   tileGrid: new ol.tilegrid.TileGrid({ 
     origin: [-1000000, 10000000],
     maxZoom: 14,
