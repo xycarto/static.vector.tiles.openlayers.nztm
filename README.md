@@ -169,3 +169,7 @@ fetch('./styleText.json').then(function(response) {
 
 ## Notes
 
+1. Not fully complete. Working example only
+2. Runs slow in Safari
+3. This is in no way the only way to do this. My hope is someone take this and make it better.
+4. Still needs label work for use on mobile devices.
