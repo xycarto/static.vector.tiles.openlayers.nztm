@@ -102,7 +102,7 @@ var map = new ol.Map({
     zoom: 10,
     projection: proj2193,
     //minZoom: 12,
-    maxZoom: 16,
+    maxZoom: 12,
   })
 });
 

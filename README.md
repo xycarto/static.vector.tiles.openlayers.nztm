@@ -148,7 +148,6 @@ var vectorMap = new ol.layer.VectorTile({
 ```
 
 
-
 ### Styling
 
 For the style file example see here: https://github.com/xycarto/static.vector.tiles.openlayers.nztm/blob/main/styleText.json
@@ -167,3 +166,6 @@ fetch('./styleText.json').then(function(response) {
 2. The above uses `olms.applyStyle`. To access this function you will need to add the scipt tag to your HTML:
 
 ```<script src="https://unpkg.com/ol-mapbox-style@6.3.2/dist/olms.js" type="text/javascript"></script>```
+
+## Notes
+
