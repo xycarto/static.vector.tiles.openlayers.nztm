@@ -110,6 +110,7 @@ var layer = new ol.layer.Tile({
   source: new ol.source.XYZ({
     url: urlTemplate,
     projection: proj2193,
+    attributions: ['<a href="http://data.linz.govt.nz">Data from LINZ. CC BY 4.0</a>'],
     tileGrid: new ol.tilegrid.TileGrid({
       origin: origin,
       resolutions: resolutions,
