@@ -1,6 +1,6 @@
 # Static Vector Tiles: Openlayers Example in Custom Projection with Raster Tile Base
 
-This example uses Openlayers6. The map is served in the NZTM projection (EPSG:2193).  The main goal is loading an existing raster tile XYZ tile cache and overlay a vector tile styled with a Mapbox style.json; all in NZTM. No effort has been made in ordering the labels. They display however as the Openlayers `decluttering` orders them. Included is an example of a basic pop-up window demonstrating how to get information from the vector tile.
+This example uses Openlayers6. The map is served in the NZTM projection (EPSG:2193).  The main goal is loading an existing raster tile XYZ tile cache and overlay a vector tile styled with a Mapbox style.json; all in NZTM. No effort has been made in ordering the labels. The labels display as the Openlayers `decluttering` orders them. Included is an example of a basic pop-up window demonstrating how to get information from the vector tile.
 
 The project is built as a static set up.  The vector tile cache is built directly into the website. THIS IS NOT OPTIMAL, but does demonstrate the principle. Ideally, you would have a location like AWS S3, to serve your tile cache from.  
 
@@ -35,7 +35,7 @@ desc_code = BAY, METR, LOC, POP, TOWN, SBRB
 
 ## TRex Tiling
 
-[TRex](https://t-rex.tileserver.ch) will create an XYZ tile cache in the projection of your choosing.  You will need to know the resolutions and bounding box of your projection in order to make this work. I was fortunate to have this information at hand thanks to a great turtorial from [LINZ](https://www.linz.govt.nz/data/linz-data-service/guides-and-documentation/nztm2000-map-tile-service-schema). 
+[TRex](https://t-rex.tileserver.ch) will create an XYZ tile cache in the projection of your choosing.  You will need to know the resolutions and bounding box of your projection in order to make this work. I was fortunate to have this information at hand thanks to a great tutorial from [LINZ](https://www.linz.govt.nz/data/linz-data-service/guides-and-documentation/nztm2000-map-tile-service-schema). 
 
 TRex uses a config file for tiling.  The config used in this example is [here](https://github.com/xycarto/static.vector.tiles.openlayers.nztm/blob/main/config/configpsql_points.toml)
 
@@ -98,7 +98,7 @@ var matrixIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 #### Raster Tiles
 
-Another great tutorial from [LINZ](https://www.linz.govt.nz/data/linz-data-service/guides-and-documentation/using-lds-xyz-services-in-openlayers) regarding the set up of an XYZ for raster tiles. 
+Another great tutorial from [LINZ](https://www.linz.govt.nz/data/linz-data-service/guides-and-documentation/using-lds-xyz-services-in-openlayers) regarding the set up of an NZTM XYZ for raster tiles. 
 
 ```
 // Tile Services Map
