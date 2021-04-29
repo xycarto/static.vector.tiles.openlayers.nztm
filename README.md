@@ -1,6 +1,6 @@
 # Static Vector Tiles: Openlayers Example in Custom Projection with Raster Tile Base
 
-This example uses Openlayers6. The map is served in the NZTM projection (EPSG:2193).  The main goal is loading an existing raster tile XYZ tile cache and overlay a vector tile styled with a Mapbox style.json; all in NZTM. No effort has been made in ordering the labels. They display however the Openlayers `decluttering` orders them. Included is an example of a basic pop-up window demonstrating how to get information from the vector tile.
+This example uses Openlayers6. The map is served in the NZTM projection (EPSG:2193).  The main goal is loading an existing raster tile XYZ tile cache and overlay a vector tile styled with a Mapbox style.json; all in NZTM. No effort has been made in ordering the labels. They display however as the Openlayers `decluttering` orders them. Included is an example of a basic pop-up window demonstrating how to get information from the vector tile.
 
 The project is built as a static set up.  The vector tile cache is built directly into the website. THIS IS NOT OPTIMAL, but does demonstrate the principle. Ideally, you would have a location like AWS S3, to serve your tile cache from.  
 
@@ -28,6 +28,10 @@ The Geographic Names layer is clipped and filtered for this example. I clipped o
 ```
 desc_code = BAY, METR, LOC, POP, TOWN, SBRB
 ```
+
+## Upload to PostgreSQL
+
+shp2pgsql -s 2193 /data/wellyRegion_townBay.shp public.wellyRegion_townBay_nztm | psql -h localhost -d <yourDatabaseHere> -U <youUserNameHere>
 
 ## TRex Tiling
 
