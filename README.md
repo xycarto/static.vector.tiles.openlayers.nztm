@@ -89,6 +89,7 @@ var resolutions = [ 8960, 4480, 2240, 1120, 560, 280, 140, 70, 28, 14, 7, 2.8, 1
 var matrixIds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 ```
 
+
 ### Applying to Raster and Vector Tiles
 
 #### Raster Tiles
@@ -117,8 +118,7 @@ var layer = new ol.layer.Tile({
 
 #### Vector Tiles
 
-Set up the vector layer: 
-
+Set up the vector layer to use custom projection: 
 
 ```
 // Set vector layer
@@ -146,6 +146,7 @@ var vectorMap = new ol.layer.VectorTile({
   zIndex: 10
   })
 ```
+
 
 
 ### Styling
