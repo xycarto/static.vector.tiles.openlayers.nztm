@@ -1,0 +1,36 @@
+{
+  "name": "static.vector.tiles.webpack",
+  "version": "1.0.0",
+  "description": "website to demonstarte openlayers in custom projection",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --config config/webpack.prod.js --progress --profile --bail",
+    "start": "webpack-dev-server --open --mode development --config webpack.config.js",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xycarto/static.vector.tiles.openlayers.nztm.git"
+  },
+  "author": "xycarto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xycarto/static.vector.tiles.openlayers.nztm/issues"
+  },
+  "homepage": "https://github.com/xycarto/static.vector.tiles.openlayers.nztm#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "html-webpack-plugin": "^5.3.1",
+    "ol": "^6.5.0",
+    "proj4": "^2.7.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2"
+  },
+  "dependencies": {
+    "ol-mapbox-style": "^6.3.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-watch": "^0.2.0"
+  }
+}
